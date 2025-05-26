@@ -23,7 +23,6 @@ export const MemoryGame = ({ theme, size, players, session }: MemoryGameType) =>
     const [winners, setWinners] = useState<typeof playersCount | null>(null)
     const [hasStarted, setHasStarted] = useState(false)
 
-
     const cards = useMemo(() => generateDeck(theme, size), [theme, size]);
     const gameOver = solved.length === cards.length;
     const { time: timer, formatTime, start } = useTimer(gameOver);
@@ -31,15 +30,11 @@ export const MemoryGame = ({ theme, size, players, session }: MemoryGameType) =>
     useEffect(() => {
         if (gameOver) {
             setWinners(findWinners);
-            sessionStorage.setItem('lastGameUrl', session)
         }
     }, [gameOver])
 
     const sendGame = async () => {
         if (winners) {
-            console.log(winners.length,
-                winners.length > 1 ? winners.map(p => p.player).join(", ") : winners[0].player,
-                theme, winners[0].points, winners[0].tries, timer)
             await gameAPi.postGame({
                 players,
                 winners: winners.length > 1 ? winners.map(p => p.player).join(", ") : winners[0].player,
@@ -54,27 +49,35 @@ export const MemoryGame = ({ theme, size, players, session }: MemoryGameType) =>
         if (winners !== null) sendGame()
     }, [winners])
 
-    useEffect(() => {
-        const checkForMatch = () => {
-            const [first, second] = flipped;
-            const match = cards[first] === cards[second]
-            const willBeSolvedCount = match ? solved.length + 2 : solved.length;
-            const isLastMove = willBeSolvedCount === cards.length;
+    const checkForMatch = () => {
+        const [first, second] = flipped;
+        const match = cards[first] === cards[second]
+        const willBeSolvedCount = match ? solved.length + 2 : solved.length;
+        const isLastMove = willBeSolvedCount === cards.length;
 
-            if (match) {
-                setSolved([...solved, ...flipped]);
-                incrementPoints(playerTurn - 1)
-            }
-            setFlipped([]);
-            incrementTries(playerTurn - 1)
-            if (!isLastMove) setPlayerTurn(prev => playerTurn === players ? 1 : prev + 1)
-        };
+        if (match) {
+            setSolved([...solved, ...flipped]);
+            incrementPoints(playerTurn - 1)
+        }
+        setFlipped([]);
+        incrementTries(playerTurn - 1)
+        if (!isLastMove) setPlayerTurn(prev => playerTurn === players ? 1 : prev + 1)
+    };
+
+    useEffect(() => {
         if (flipped.length === 2) {
             setTimeout(() => {
                 checkForMatch();
             }, 700);
         }
-    }, [cards, flipped, solved, gameOver]);
+    }, [flipped]);
+
+    useEffect(() => {
+        if (!hasStarted) return
+        sessionStorage.setItem('lastGameUrl', session)
+    }, [hasStarted])
+
+
 
     const handleClick = (index: number) => {
         if (!hasStarted) {

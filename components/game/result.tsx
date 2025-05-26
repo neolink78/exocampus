@@ -13,11 +13,12 @@ type ResultType = {
 export const Result = ({ gameOver, winners, players, timer, formatTime }: ResultType) => {
     return (
         <div className="flex flex-col items-center">
-            <h2 className="bg-yellow-300 py-1 px-8 border border-yellow-400 rounded-2xl w-fit">{formatTime}</h2>
-            <div className="pt-5 transition-opacity duration-300 ease-in-out" style={{
-                opacity: gameOver ? 1 : 0,
-                visibility: gameOver ? 'visible' : 'hidden'
-            }}>
+            <h2 className="bg-yellow-300 py-1 px-8 rounded-2xl w-fit dark:bg-orange-300 dark:text-black">{formatTime}</h2>
+            <div className={`
+          min-h-[5rem] sm:min-h-[4rem] px-5 py-5
+          text-center transition-opacity duration-300
+          ${gameOver ? 'opacity-100' : 'opacity-0'}
+        `}>
                 {gameOver && winners && winners.length === 1 ? (
                     players > 1 ? (
                         <h2 className="text-center">{winners[0].player} wins with {winners[0].points} points. The game took {timer} seconds to be completed!</h2>
@@ -27,8 +28,7 @@ export const Result = ({ gameOver, winners, players, timer, formatTime }: Result
                         )
                 ) : winners && winners.length > 1 && (
                     <h2 className="text-center">
-                        Draw! Winners are: {winners.map(p => p.player).join(", ")} with {winners[0].points}&nbsp;
-                        points each. The game took {timer} seconds to be completed!
+                        Draw! Winners are: {winners.map(p => p.player).join(", ")} with {winners[0].points} points each. The game took {timer} seconds to be completed!
                     </h2>
                 )
                 }

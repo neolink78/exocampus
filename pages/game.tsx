@@ -15,9 +15,9 @@ export default function Game() {
     return (
         <div>
             <header className="pt-10 flex flex-col gap-5 text-sm items-center justify-center sm:pr-10 sm:flex-row sm:justify-end sm:text-lg">
-                <button onClick={reset} className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center w-fit">Restart</button>
-                <Link href='/' className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center  w-fit">Change settings</Link>
-                <Link href='/result' className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center  w-fit">Leaderboard</Link>
+                <button onClick={reset} className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center w-fit dark:hover:bg-orange-500 dark:bg-orange-300 dark:text-black dark:border-orange-500">Restart</button>
+                <Link href='/' className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center w-fit dark:hover:bg-orange-500 dark:bg-orange-300 dark:text-black dark:border-orange-500">Change settings</Link>
+                <Link href='/leaderboard' className="bg-yellow-300 hover:bg-yellow-400 py-1 px-8 border border-yellow-400 rounded-2xl text-center w-fit dark:hover:bg-orange-500 dark:bg-orange-300 dark:text-black dark:border-orange-500">Leaderboard</Link>
             </header>
             <main>
                 {theme && players && size &&

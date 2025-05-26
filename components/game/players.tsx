@@ -14,9 +14,9 @@ export const Players = ({ players, playerTurn, playersCount }: PlayersType) => {
             {Array.from({ length: players }).map((_, idx) => {
                 const isSelected = idx + 1
                 return (
-                    <div key={idx} className={`${playerTurn === isSelected ? 'bg-blue-500' : 'bg-blue-200'} rounded-xl text-center`}>
+                    <div key={idx} className={`${playerTurn === isSelected ? 'bg-[#6397c6] dark:bg-orange-500' : 'bg-blue-200 dark:bg-orange-300'} dark:text-black rounded-xl text-center`}>
                         {players > 1 && <h1 className="border-b border-black mx-4 py-2 rounded-t-xl text-center" >Player {idx + 1}</h1>}
-                        <div className={`${players > 1 ? 'rounded-b-xl' : 'p-4 rounded-xl flex gap-2 justify-center items-center'}`} >
+                        <div className={`${players > 1 ? 'rounded-b-xl py-1' : 'px-3 py-2 rounded-xl flex gap-2 justify-center items-center'}`} >
                             <h3 className={`${players > 1 ? 'pt-2' : ''}`} >Tries:</h3>
                             <h3>{playersCount[idx].tries}</h3>
                             <h3 className={`${players > 1 ? 'pt-2' : ''}`} >Points:</h3>
