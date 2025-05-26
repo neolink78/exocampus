@@ -4,7 +4,9 @@ import { AppProps } from 'next/app';
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <Component {...pageProps} />
+        <div className='min-h-screen bg-gradient-to-r from-[#FFE6C9] to-[#FFD0A3]'>
+            <Component {...pageProps} />
+        </div>
     )
 }
 
