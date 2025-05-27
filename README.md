@@ -34,6 +34,7 @@ The technologies used include:
 
 3. In the frontend part, run
  ```bash
+ npm i
  npm run build
  ```
     
