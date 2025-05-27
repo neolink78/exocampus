@@ -80,8 +80,8 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000", 
-        "https://your-vercel-domain.vercel.app",
-        "https://*.vercel.app"  # Allow all Vercel deployments
+        "https://exocampus.vercel.app",
+        "https://www.exocampus.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
