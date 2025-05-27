@@ -1,0 +1,36 @@
+{
+    "homepage_title" : "Memory",
+
+    "homepage_theme_selector": "Select theme",
+    "homepage_theme_numbers": "Numbers",
+    "homepage_theme_icons": "Icons",
+    "homepage_players_selector": "Numbers of players",
+    "homepage_grid_selector": "Grid size",
+    "homepage_start_button": "Start game",
+    "homepage_leaderboard_button": "Leaderboard",
+
+    "game_restart_button": "Restart",
+    "game_settings_button": "Change settings",
+    "game_tries": "Tries :",
+    "game_points": "Points :",
+    "game_player": "Player ",
+    "game_player_lower": "player ",
+
+    "singleplayer_win": "You won with {{points}} points in {{seconds}} seconds !",
+    "multiplayer_win": "Player {{playerId}} wins with {{points}} points. The game took {{seconds}} seconds to be completed !",
+    "draw_message": "Draw! Winners are: Player {{winners}} with {{points}} points each. The game took {{seconds}} seconds to be completed !",
+
+    "leaderboard_replay": "Replay",
+    "leaderboard_average_score": "Score on average : ",
+    "leaderboard_total_games": "Games played : ",
+    "leaderboard_players": "Players",
+    "leaderboard_winners": "Winner(s)",
+    "leaderboard_theme": "Theme",
+    "leaderboard_winner_score": "Winner Score",
+    "leaderboard_tries": "Tries",
+    "leaderboard_time": "Time (s)",
+
+    "theme_numbers": "Numbers",
+    "theme_icons":   "Icons",
+    "player":        "Player"
+}

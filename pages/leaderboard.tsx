@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import * as gameAPi from '@/services/api.service'
 import { Results } from "@/components/leaderboard"
 import { Header } from "@/components/leaderboard/header"
+import { getStaticPropsWithTranslations } from '@/hoc/serverSideProps';
 
 export type GameType = {
     date: string,
@@ -12,6 +13,8 @@ export type GameType = {
     tries: number,
     time: number
 }
+
+export const getStaticProps = getStaticPropsWithTranslations()
 
 export default function Leaderboard() {
     const [topTen, setTopTen] = useState<GameType[]>([])

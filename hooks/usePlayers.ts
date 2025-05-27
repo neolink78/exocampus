@@ -3,6 +3,7 @@ import { useState } from "react";
 export const usePlayers = (players: number) => {
      const playersCounter = Array.from({ length: players }, (_, idx) => ({
         player: `Player ${idx + 1}`,
+        playerId: idx + 1,
         tries: 0,
         points: 0
     }))

@@ -3,6 +3,9 @@ import { FrenchFlagIcon } from "@/lib/icons/frenchFlag";
 import { Sun } from "@/lib/icons/sun";
 import { EnglishFlagIcon } from "@/lib/icons/ukFlag";
 import { Moon } from "@/lib/icons/moon";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
+import { useState, useEffect } from "react";
 
 type LayoutType = {
     children: React.ReactNode
@@ -10,16 +13,35 @@ type LayoutType = {
 
 export const Layout = ({ children }: LayoutType) => {
     const { resolvedTheme, setTheme } = useTheme()
+    const { i18n } = useTranslation('common')
+    const router = useRouter()
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null;
+
+    const changeLanguage = (lang: string) => {
+        if (lang === i18n.language) return
+        i18n.changeLanguage(lang)
+        router.push({
+            pathname: router.pathname,
+            query: router.query,
+        }, undefined, { locale: lang })
+    }
+
     return (
-        <div className={`min-h-screen ${resolvedTheme === 'light' ? 'bg-gradient-to-r from-[#FFE6C9] to-[#FFD0A3]' : 'bg-[#0f0f0f]'}`} >
+        <div className={`min-h-screen ${resolvedTheme === 'light' && 'bg-gradient-to-r from-[#FFE6C9] to-[#FFD0A3]'} bg-[#0f0f0f]`} >
             <div className="flex justify-end gap-5 pt-5 pr-5 items-center">
                 <div
-                //onClick={() => changeLanguage('fr')}
+                    onClick={() => changeLanguage('fr')}
                 >
                     <FrenchFlagIcon className="w-5 h-5 hover:cursor-pointer" />
                 </div>
                 <div
-                //onClick={() => changeLanguage('en')}
+                    onClick={() => changeLanguage('en')}
                 >
                     <EnglishFlagIcon className="w-5 h-5 hover:cursor-pointer" />
                 </div>

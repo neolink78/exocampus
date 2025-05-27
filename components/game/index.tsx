@@ -12,9 +12,10 @@ type MemoryGameType = {
     size: string | string[]
     players: number
     session: string
+    t: (key: string) => string;
 }
 
-export const MemoryGame = ({ theme, size, players, session }: MemoryGameType) => {
+export const MemoryGame = ({ theme, size, players, session, t }: MemoryGameType) => {
     const { playersCount, incrementTries, incrementPoints, findWinners } = usePlayers(players)
 
     const [flipped, setFlipped] = useState<number[]>([]);
@@ -88,12 +89,13 @@ export const MemoryGame = ({ theme, size, players, session }: MemoryGameType) =>
             setFlipped([...flipped, index]);
         }
     };
+    console.log(winners)
 
     return (
         <div className="flex flex-col items-center mt-10">
             <Result gameOver={gameOver} winners={winners} players={players} timer={timer} formatTime={formatTime} />
             <Cards size={size} cards={cards} theme={theme} handleClick={handleClick} flipped={flipped} solved={solved} />
-            <Players players={players} playerTurn={playerTurn} playersCount={playersCount} />
+            <Players players={players} playerTurn={playerTurn} playersCount={playersCount} t={t} />
         </div>
     );
 }

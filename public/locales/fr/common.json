@@ -1,0 +1,37 @@
+{
+    "homepage_title" : "Mémoire",
+
+    "homepage_theme_selector": "Choisissez un thème",
+    "homepage_theme_numbers": "Nombres",
+    "homepage_theme_icons": "Icônes",
+    "homepage_players_selector": "Nombres de joueurs",
+    "homepage_grid_selector": "Taille de la grille",
+    "homepage_start_button": "Démarrer la partie",
+    "homepage_leaderboard_button": "Tableau des scores",
+
+    "game_restart_button": "Rédémarrer",
+    "game_settings_button": "Modifier les paramètres",
+    "game_tries": "Essais :",
+    "game_points": "Points :",
+    "game_player": "Joueur ",
+    "game_player_lower": "joueur ",
+
+    "singleplayer_win": "Vous avez gagné avec {{points}} points en {{seconds}} secondes !",
+    "multiplayer_win": "Le joueur {{playerId}} a gagné avec {{points}} points. La partie a duré {{seconds}} secondes !",
+    "draw_message": "Égalité ! Les gagnants sont : joueur {{winners}} avec {{points}} points chacun. La partie a duré {{seconds}} secondes !",
+
+    "leaderboard_replay": "Rejouer",
+    "leaderboard_average_score": "Résultats moyens : ",
+    "leaderboard_total_games": "Parties jouées : ",
+    "leaderboard_players": "Joueurs",
+    "leaderboard_winners": "Gagnant(s)",
+    "leaderboard_theme": "Thème",
+    "leaderboard_winner_score": "Score du gagnant",
+    "leaderboard_tries": "Essais",
+    "leaderboard_time": "Temps (s)",
+
+    "theme_numbers": "Nombres",
+    "theme_icons":   "Icônes",
+    "player":        "Joueur"
+
+}
