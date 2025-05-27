@@ -32,6 +32,10 @@ The technologies used include:
  ```
  2. Create a .env file in the root, frontend and backend folders with required environment variables you can find in the .env.sample. file
 
+3. In the frontend part, run
+ ```bash
+ npm run build
+ ```
     
  3. Build and start all services with Docker Compose
     
