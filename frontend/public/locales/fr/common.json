@@ -1,4 +1,7 @@
 {
+    "layout_light_mode": "Mettre en mode sombre",
+    "layout_dark_mode": "Mettre en mode clair",
+   
     "homepage_title" : "Mémoire",
 
     "homepage_theme_selector": "Choisissez un thème",
@@ -11,6 +14,9 @@
 
     "game_restart_button": "Rédémarrer",
     "game_settings_button": "Modifier les paramètres",
+    "game_card": "Carte ",
+    "game_card_flipped": "retournée",
+    "game_card_not_flipped": "face cachée",
     "game_tries": "Essais :",
     "game_points": "Points :",
     "game_player": "Joueur ",

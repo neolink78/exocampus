@@ -46,6 +46,7 @@ export const MemoryGame = ({ theme, size, players, session, t }: MemoryGameType)
             })
         }
     }
+
     useEffect(() => {
         if (winners !== null) sendGame()
     }, [winners])
@@ -91,7 +92,7 @@ export const MemoryGame = ({ theme, size, players, session, t }: MemoryGameType)
     return (
         <div className="flex flex-col items-center mt-10">
             <Result gameOver={gameOver} winners={winners} players={players} timer={timer} formatTime={formatTime} />
-            <Cards size={size} cards={cards} theme={theme} handleClick={handleClick} flipped={flipped} solved={solved} />
+            <Cards size={size} cards={cards} theme={theme} handleClick={handleClick} flipped={flipped} solved={solved} t={t} />
             <Players players={players} playerTurn={playerTurn} playersCount={playersCount} t={t} />
         </div>
     );

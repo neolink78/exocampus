@@ -1,4 +1,7 @@
 {
+    "layout_light_mode": "Switch to light mode",
+    "layout_dark_mode": "Switch to dark mode",
+    
     "homepage_title" : "Memory",
 
     "homepage_theme_selector": "Select theme",
@@ -11,6 +14,9 @@
 
     "game_restart_button": "Restart",
     "game_settings_button": "Change settings",
+    "game_card": "Card ",
+    "game_card_flipped": "flipped",
+    "game_card_not_flipped": "not flipped",
     "game_tries": "Tries :",
     "game_points": "Points :",
     "game_player": "Player ",
