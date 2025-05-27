@@ -37,7 +37,7 @@ The technologies used include:
  npm run build
  ```
     
- 3. Build and start all services with Docker Compose
+ 4. Build and start all services with Docker Compose
     
  ```bash
  docker-compose up --build
