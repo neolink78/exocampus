@@ -1,4 +1,3 @@
-
 export const generateDeck = (theme: string | string[], size: string | string[]) => {
        const generateNumbersDeck = () => {
         let numberCards = ['1', '2', '3', '4', '5', '6', '7', '8']

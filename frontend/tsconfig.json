@@ -32,7 +32,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    ".next/types/**/*.ts",
+    "frontend/.next/types/**/*.ts",
     "src/**/*",
     "jest.setup.ts"
   ],

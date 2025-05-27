@@ -78,8 +78,6 @@ export const MemoryGame = ({ theme, size, players, session, t }: MemoryGameType)
         sessionStorage.setItem('lastGameUrl', session)
     }, [hasStarted])
 
-
-
     const handleClick = (index: number) => {
         if (!hasStarted) {
             start();
@@ -89,7 +87,6 @@ export const MemoryGame = ({ theme, size, players, session, t }: MemoryGameType)
             setFlipped([...flipped, index]);
         }
     };
-    console.log(winners)
 
     return (
         <div className="flex flex-col items-center mt-10">
