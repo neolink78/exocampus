@@ -102,7 +102,7 @@ def get_db():
 async def root():
     return {"message": "Memory Card Game API"}
 
-@app.post("/games/", response_model=GameResponse)
+@app.post("/games", response_model=GameResponse)
 async def create_game(game: GameCreate, db: Session = Depends(get_db)):
     """Create a new game record"""
     db_game = Game(**game.dict())
