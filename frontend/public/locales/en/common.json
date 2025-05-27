@@ -29,6 +29,7 @@
     "leaderboard_winner_score": "Winner Score",
     "leaderboard_tries": "Tries",
     "leaderboard_time": "Time (s)",
+    "leaderboard_no_data": "{{index}} - There is no {{index}}{{ordinal}} game yet!",
 
     "theme_numbers": "Numbers",
     "theme_icons":   "Icons",

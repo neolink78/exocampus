@@ -15,12 +15,25 @@ type TableType = {
 
 export const MobileTable = ({ topTen, translateTheme, translateWinners }: TableType) => {
     const { t, i18n } = useTranslation('common')
+
+    const frenchOrdinal = (num: number) => {
+        return num === 1 ? '1ère' : num + 'e'
+    }
+
+    const englishOrdinal = (num: number) => {
+        const suffixes = ['th', 'st', 'nd', 'rd'];
+        const v = num % 100;
+        return suffixes[(v - 20) % 10] || suffixes[v] || suffixes[0];
+    }
+
     return (
         <div className="sm:hidden flex justify-center">
             <Accordion type="single" collapsible className="space-y-2 w-full max-w-[21rem]">
                 {[...Array(10)].map((_, idx) => {
                     const game = topTen[idx]
                     const date = new Date(game?.date).toLocaleDateString(i18n.language === 'fr' ? "fr-FR" : "en-us")
+                    const index = idx + 1
+                    const ordinal = i18n.language === 'fr' ? frenchOrdinal(idx + 1) : englishOrdinal(index)
 
                     if (!game) {
                         return (
@@ -28,7 +41,7 @@ export const MobileTable = ({ topTen, translateTheme, translateWinners }: TableT
                                 key={idx}
                                 className="border border-orange-300 rounded-lg rounded-lg px-4 py-3 font-bold text-sm cursor-not-allowed"
                             >
-                                {idx + 1} - There is no {idx + 1}{idx === 0 ? 'st' : idx === 1 ? 'nd' : idx === 2 ? 'rd' : 'th'} game yet !
+                                {t("leaderboard_no_data", { index, ordinal } as Record<string, unknown>)}
                             </h3>
                         )
                     }

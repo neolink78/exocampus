@@ -32,9 +32,9 @@ export const Results = ({ loading, stats, topTen }: ResultsType) => {
                 </div>) : (
                 <>
                     <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm sm:text-base mb-5">
-                        <h2 className="font-semibold">{t("leaderboard_average_score")} {Math.round(stats?.average_score * 100) / 100}</h2>
+                        <h2 className="font-semibold">{t("leaderboard_average_score")} {Math.round(stats?.average_score * 100) / 100 || 0}</h2>
                         <h1 className="hidden sm:block text-xl font-bold">Top 10</h1>
-                        <h2 className="font-semibold">{t("leaderboard_total_games")} {stats?.total_games}</h2>
+                        <h2 className="font-semibold">{t("leaderboard_total_games")} {stats?.total_games || 0}</h2>
                         <h1 className="sm:hidden block text-xl font-bold">Top 10</h1>
                     </div>
                     <DesktopTable topTen={topTen} translateTheme={translateTheme} translateWinners={translateWinners} />

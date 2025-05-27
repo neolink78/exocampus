@@ -29,6 +29,7 @@
     "leaderboard_winner_score": "Score du gagnant",
     "leaderboard_tries": "Essais",
     "leaderboard_time": "Temps (s)",
+    "leaderboard_no_data":  "{{index}} - Il n'y a pas encore de {{ordinal}} partie !",
 
     "theme_numbers": "Nombres",
     "theme_icons":   "Icônes",
