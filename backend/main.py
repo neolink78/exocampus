@@ -73,7 +73,7 @@ class StatsResponse(BaseModel):
     total_games: int
 
 # FastAPI app
-app = FastAPI(title="Memory Card Game API", version="1.0.0")
+app = FastAPI(title="Memory Card Game API", version="1.0.0", redirect_slashes = False)
 
 # CORS middleware for Next.js frontend
 app.add_middleware(
@@ -81,7 +81,8 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:3000", 
         "https://exocampus.vercel.app",
-        "https://www.exocampus.vercel.app"
+        "https://www.exocampus.vercel.app",
+        "https://*.vercel.app"
     ],
     allow_credentials=True,
     allow_methods=["*"],
